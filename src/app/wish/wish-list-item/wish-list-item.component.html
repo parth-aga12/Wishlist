@@ -1,0 +1,17 @@
+
+
+<li class="d-flex justify-content-between"> <!--ngFor is a JS for loop going through each item in the items array in app.component.ts-->
+    <div class="form-check">  <!--index as ii (i in for loop kinda) is to count how many checkboxes are true-->
+      <label class="form-check-label" [ngClass]="cssClasses"> 
+        <input 
+          class="checkbox" 
+          type="checkbox"
+          [checked]="wish.isComplete" 
+          (click)="toggleFulfilled()"
+          > {{wish.wishText}} <!--checked is only toggled if isComplete is true in wishitem.ts, [] binds HTML property such as checked to javascript value-->
+      </label>  <!--attr. creates a custom attribute for HTML-->
+    </div>
+    <div>
+      <button type="boolean" class="btn-close" (click)="removeWish()"></button>
+    </div>
+</li>

@@ -1,0 +1,29 @@
+<div class="container">
+  
+    <!--div below is for the add wish coming from add-wish-form component-->
+    <add-wish-form
+      (addWish)="items.push($event)"
+    
+    ></add-wish-form>
+  
+    <!--div below is for filter coming from wish-filter component-->
+    <div class="row mt-3">
+      <wish-filter
+        [(filter)]="filter"
+      ></wish-filter> <!--2-way binding: create own input/output like ngChange [()]-->
+    </div>
+  
+    <!--div below is for wishlist coming from wish-list component-->
+    <div class="row mt-3">
+      <div class="col-sm-4">
+        <wish-list
+          [wishes]="items.filter(filter)"
+        ></wish-list>
+      </div>
+  
+  
+    </div>
+  
+  
+  
+  </div>
